@@ -502,36 +502,57 @@ profile-photo .img{
 
 
 /* Mobile Layout */
-@media only screen and (max-width:767px){
-  .container{
-    width: 350px;
+@media only screen and (max-width: 767px) {
+  /* Set container width for mobile */
+  .container {
+    width: 100%; /* Make it responsive to fit screen width */
+    padding: 0 15px; /* Add some padding for a cleaner layout */
   }
 
+  /* Header and Navigation Bar */
   .header .menu_icon {
-    display: block;
+    display: block; /* Show menu icon on mobile */
+    font-size: 24px; /* Increase icon size for better touch target */
+    color: #e5e5e5; /* Icon color */
   }
-  .header ul{
-    display: none;
+
+  .header ul.navbar {
+    display: none; /* Hide the navbar initially */
+    flex-direction: column; /* Stack items vertically in mobile */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%; /* Full width on mobile */
+    background-color: #202020; /* Background color for mobile navbar */
+    padding: 10px 0;
   }
-  .header i{
+
+  .header ul.navbar.show {
+    display: flex; /* Show navbar when toggled */
+  }
+
+  .header i {
     color: #e5e5e5;
   }
 
-  .profile-text{
-    width: 350px;
-  }
-  .FirstElement .profile-text p{
+  /* Profile and About Section */
+  .profile-text {
+    width: 100%; /* Adjust profile text width */
     text-align: justify;
   }
-  .about{
+
+  .about {
     flex-direction: column;
     flex-basis: 100%;
     margin-bottom: 30px;
   }
-  .about-skills{
+
+  .about-skills {
     width: 100%;
     margin-top: 30px;
   }
+
+  /* Education and Internship Content */
   .education-content .row {
     flex-direction: column;
     height: auto;
@@ -544,24 +565,31 @@ profile-photo .img{
     max-width: 100%;
     margin-top: 30px;
   }
-  .project{
+
+  /* Projects Section */
+  .project {
     flex-basis: 100%;
     margin-bottom: 30px;
   }
 
+  /* Social Media Icons */
   .social {
     justify-content: center; /* Center the social icons */
-    display: flex; /* Use flexbox for centering */
-    margin: 20px 0; /* Add some margin for spacing */
+    display: flex;
+    margin: 20px 0; /* Add spacing */
   }
-  .social a { /* Add this rule for spacing between icons */
-    margin: 0 10px; /* Adjust the value as needed */
+
+  .social a {
+    margin: 0 10px; /* Space between icons */
   }
-  .profile-btn-group{
+
+  /* Profile Button Group */
+  .profile-btn-group {
     display: flex;
     justify-content: center;
   }
 }
+
 
 /*Cerificate section*/
 
