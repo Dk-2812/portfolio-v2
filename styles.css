@@ -502,74 +502,36 @@ profile-photo .img{
 
 
 /* Mobile Layout */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px){
+  .container{
+    width: 350px;
+  }
+
   .header .menu_icon {
-    display: block; /* Show menu icon on mobile */
-    font-size: 24px; /* Increase icon size for better touch target */
+    display: block;
+  }
+  .header ul{
+    display: none;
+  }
+  .header i{
     color: #e5e5e5;
   }
 
-  .header ul.navbar {
-    display: none; /* Hide navbar initially */
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #202020;
-    padding: 10px 0;
+  .profile-text{
+    width: 350px;
   }
-
-  .header ul.navbar.show {
-    display: flex; /* Show navbar when toggled */
-  }
-}
-
-
-  /* Header and Navigation Bar */
-  .header .menu_icon {
-    display: block; /* Show menu icon on mobile */
-    font-size: 24px; /* Increase icon size for better touch target */
-    color: #e5e5e5; /* Icon color */
-  }
-
-  .header ul.navbar {
-    display: none; /* Hide the navbar initially */
-    flex-direction: column; /* Stack items vertically in mobile */
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%; /* Full width on mobile */
-    background-color: #202020; /* Background color for mobile navbar */
-    padding: 10px 0;
-  }
-
-  .header ul.navbar.show {
-    display: flex; /* Show navbar when toggled */
-  }
-
-  .header i {
-    color: #e5e5e5;
-  }
-
-  /* Profile and About Section */
-  .profile-text {
-    width: 100%; /* Adjust profile text width */
+  .FirstElement .profile-text p{
     text-align: justify;
   }
-
-  .about {
+  .about{
     flex-direction: column;
     flex-basis: 100%;
     margin-bottom: 30px;
   }
-
-  .about-skills {
+  .about-skills{
     width: 100%;
     margin-top: 30px;
   }
-
-  /* Education and Internship Content */
   .education-content .row {
     flex-direction: column;
     height: auto;
@@ -582,31 +544,24 @@ profile-photo .img{
     max-width: 100%;
     margin-top: 30px;
   }
-
-  /* Projects Section */
-  .project {
+  .project{
     flex-basis: 100%;
     margin-bottom: 30px;
   }
 
-  /* Social Media Icons */
   .social {
     justify-content: center; /* Center the social icons */
-    display: flex;
-    margin: 20px 0; /* Add spacing */
+    display: flex; /* Use flexbox for centering */
+    margin: 20px 0; /* Add some margin for spacing */
   }
-
-  .social a {
-    margin: 0 10px; /* Space between icons */
+  .social a { /* Add this rule for spacing between icons */
+    margin: 0 10px; /* Adjust the value as needed */
   }
-
-  /* Profile Button Group */
-  .profile-btn-group {
+  .profile-btn-group{
     display: flex;
     justify-content: center;
   }
 }
-
 
 /*Cerificate section*/
 
