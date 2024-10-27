@@ -107,31 +107,6 @@ body{
   display: none;
 }
 
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .header ul.navbar {
-    display: none; /* Hide navbar on mobile */
-    flex-direction: column; /* Stack links vertically when shown */
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #202020; /* Optional background for mobile */
-    padding: 10px 0;
-  }
-
-  .header ul.navbar.show {
-    display: flex; /* Show navbar when .show class is added */
-  }
-
-  .header .menu_icon {
-    display: block; /* Show menu icon on mobile */
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-  }
-}
-
 
 /*---------------------------HomePage--------------------------*/
 
