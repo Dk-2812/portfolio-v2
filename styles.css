@@ -107,6 +107,34 @@ body{
   display: none;
 }
 
+/* Initially hide navbar in mobile view */
+.navbar-container {
+    display: none;
+}
+
+/* Show navbar when .active class is added (on toggle) */
+.navbar-container.active {
+    display: block;
+}
+
+/* Adjust the menu icon visibility and navbar styling for mobile */
+@media (max-width: 768px) {
+    .menu_icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+}
+
+
 
 /*---------------------------HomePage--------------------------*/
 
