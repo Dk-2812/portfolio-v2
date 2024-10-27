@@ -533,3 +533,62 @@ profile-photo .img{
 
 }
 
+/*Cerificate section*/
+
+.certificate-content {
+  padding: 50px 0;
+  background-color: #201f1f; /* Dark background to match other sections */
+  color: #ffffff; /* White text for readability */
+}
+
+.section-title h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #f1c40f; /* Accent color to match theme */
+}
+
+.section-title p {
+  font-size: 16px;
+  color: #d3d3d3; /* Light grey for subtitle */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.certificates {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.certificate-item {
+  display: flex;
+  align-items: center;
+  background-color: #201f1f; /* Dark box background */
+  color: #ffffff; /* White text */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 80%;
+}
+
+.icon {
+  font-size: 30px;
+  color: #f1c40f; /* Accent color for icons */
+  margin-right: 15px;
+}
+
+.certificate-info h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.certificate-info p {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+
