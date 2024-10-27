@@ -503,11 +503,28 @@ profile-photo .img{
 
 /* Mobile Layout */
 @media only screen and (max-width: 767px) {
-  /* Set container width for mobile */
-  .container {
-    width: 100%; /* Make it responsive to fit screen width */
-    padding: 0 15px; /* Add some padding for a cleaner layout */
+  .header .menu_icon {
+    display: block; /* Show menu icon on mobile */
+    font-size: 24px; /* Increase icon size for better touch target */
+    color: #e5e5e5;
   }
+
+  .header ul.navbar {
+    display: none; /* Hide navbar initially */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #202020;
+    padding: 10px 0;
+  }
+
+  .header ul.navbar.show {
+    display: flex; /* Show navbar when toggled */
+  }
+}
+
 
   /* Header and Navigation Bar */
   .header .menu_icon {
