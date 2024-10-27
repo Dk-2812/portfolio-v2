@@ -109,6 +109,14 @@ $(document).ready(function() {
       }
     });
   }
-  
+
+<script>
+    // Toggle menu display on click
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+        const navbarContainer = document.querySelector(".navbar-container");
+        navbarContainer.classList.toggle("active");  // Toggle the active class to show/hide the navbar
+    });
+</script>
+
 
  
