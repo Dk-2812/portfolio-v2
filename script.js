@@ -109,6 +109,14 @@ $(document).ready(function() {
       }
     });
   }
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".menu_icon");
+  const navbar = document.querySelector(".navbar");
+
+  menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("show"); // Toggle the .show class to display/hide navbar
+  });
+});
 
 
 
