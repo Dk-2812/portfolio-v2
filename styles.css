@@ -79,9 +79,9 @@ body{
   margin-right: 10px; 
 }
 
-.header ul li:first-child {
+/* .header ul li:first-child {
   margin-right: auto; 
-}  
+}   */
 
 .header ul{
   display: flex;
@@ -220,6 +220,24 @@ profile-photo .img{
   margin: 45px 0;
 }
 .btn-group .btn{
+  border-color: #d5d5d5;
+  color: #fff;
+  background-color: #333;
+  padding:12px 25px;
+  margin: 5px 0;
+  margin-right: 7px;
+  border-radius: 30px;
+  border: 2px solid #e5e5e5;
+  box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
+}
+.btn.active{
+  border-color: #fed700;
+}
+
+.profile-btn-group{
+  margin: 45px 0;
+}
+.profile-btn-group .btn{
   border-color: #d5d5d5;
   color: #fff;
   background-color: #333;
@@ -531,6 +549,18 @@ profile-photo .img{
     margin-bottom: 30px;
   }
 
+  .social {
+    justify-content: center; /* Center the social icons */
+    display: flex; /* Use flexbox for centering */
+    margin: 20px 0; /* Add some margin for spacing */
+  }
+  .social a { /* Add this rule for spacing between icons */
+    margin: 0 10px; /* Adjust the value as needed */
+  }
+  .profile-btn-group{
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /*Cerificate section*/
@@ -566,6 +596,7 @@ profile-photo .img{
 .certificate-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #201f1f; /* Dark box background */
   color: #ffffff; /* White text */
   padding: 20px;
@@ -591,4 +622,14 @@ profile-photo .img{
   color: #cccccc;
 }
 
+.certificate-item-content{
+  display: flex;
+  align-items: center;
+}
+
+.external-link{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 
