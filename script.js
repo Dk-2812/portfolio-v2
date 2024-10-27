@@ -109,9 +109,4 @@ $(document).ready(function() {
       }
     });
   }
-
-
-
-
-
  
