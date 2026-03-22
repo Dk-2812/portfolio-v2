@@ -1,245 +1,652 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divyam Kashyap</title>
-    <link rel="icon" href="files/favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" class="stylesheet">
-</head> 
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Divyam Kashyap — Associate Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-    <!-- Header Area -->
-    <header class="header-area">
+  <!-- CURSOR -->
+  <div class="cursor-wrapper">
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+  </div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <div class="loader-text">
+        <span class="loader-name">DIVYAM KASHYAP</span>
+        <span class="loader-pct" id="loaderPct">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>DK<span class="logo-bracket">]</span>
+    </div>
+    <div class="nav-center">
+      <ul class="nav-links">
+        <li><a href="#about" data-text="About">About</a></li>
+        <li><a href="#experience" data-text="Experience">Experience</a></li>
+        <li><a href="#projects" data-text="Projects">Projects</a></li>
+        <li><a href="#research" data-text="Research">Research</a></li>
+        <li><a href="#skills" data-text="Skills">Skills</a></li>
+        <li><a href="#contact" data-text="Contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-text">Available</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#experience" class="mob-link">Experience</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#research" class="mob-link">Research</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="hero-bg-text">AI</div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-label">Associate Software Engineer · AI & Automation</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line" data-delay="0">DIVYAM</span>
+        <span class="name-line italic-serif" data-delay="100">KASHYAP</span>
+      </h1>
+      <div class="hero-type-wrapper">
+        <span class="type-prefix">I build </span>
+        <span class="typewriter" id="typewriter"></span>
+        <span class="type-cursor">|</span>
+      </div>
+      <p class="hero-bio">
+        AI Engineer & Full-Stack Developer crafting intelligent systems at the intersection of document intelligence, automation, and scalable APIs. Currently at <em>Firstsource Solutions Ltd</em>, Hyderabad.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-glow">
+          <span>Explore Work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Let's Talk</a>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="metric">
+          <div class="metric-val" data-count="8.69" data-dec="2">0</div>
+          <div class="metric-label">CGPA · VIT</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric">
+          <div class="metric-val" data-count="92" data-dec="0">0</div>
+          <div class="metric-label">% ML Accuracy</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric">
+          <div class="metric-val" data-count="10" data-dec="0">0</div>
+          <div class="metric-label">+ Projects</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric">
+          <div class="metric-val" data-count="4" data-dec="0">0</div>
+          <div class="metric-label">Certifications</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="orb-ring ring1"></div>
+      <div class="orb-ring ring2"></div>
+      <div class="orb-ring ring3"></div>
+      <div class="orb-core">
+        <div class="orb-inner">
+          <span class="orb-icon">⚡</span>
+        </div>
+      </div>
+      <div class="floating-chip chip1">
+        <span>FastAPI</span>
+      </div>
+      <div class="floating-chip chip2">
+        <span>AI/ML</span>
+      </div>
+      <div class="floating-chip chip3">
+        <span>ReactJS</span>
+      </div>
+      <div class="floating-chip chip4">
+        <span>Python</span>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section experience-section" id="experience">
     <div class="container">
-        <div class="header">
-            <a href="#" class="logo">
-                <img src="files/signature.png" alt="" class="signature">
-            </a>
-            <ul class="navbar">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
+      <div class="section-header">
+        <div class="section-tag">01 · Experience</div>
+        <h2 class="section-title">Where I've<br><em>Worked</em></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-track"></div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Jul 2025 — Present</div>
+          <div class="exp-card glass-card">
+            <div class="exp-top">
+              <div>
+                <div class="exp-role">Associate Software Engineer</div>
+                <div class="exp-focus">AI & Automation</div>
+              </div>
+              <div class="exp-company-badge">
+                <span class="company-icon">⚡</span>
+                <span>Firstsource Solutions Ltd</span>
+              </div>
+            </div>
+            <div class="exp-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Hyderabad, Telangana · Remote
+            </div>
+            <ul class="exp-list">
+              <li>Developed AI-driven <strong>document intelligence</strong> and data redaction systems protecting sensitive PII, PHI, and PCI data in enterprise environments.</li>
+              <li>Designed scalable backend APIs using <strong>Python & FastAPI</strong> for secure file processing, text extraction, and automated redaction workflows.</li>
+              <li>Integrated <strong>Microsoft Presidio NLP (NER)</strong> with custom regex and rule-based logic for enhanced detection accuracy.</li>
+              <li>Built format-agnostic document pipelines supporting <strong>TXT, PDF, and DOCX</strong> with encoding handling and text normalization.</li>
+              <li>Performed analytical evaluation with <strong>data validation</strong>, consistency checks, and pattern analysis to minimize errors.</li>
+              <li>Followed modular architecture, PEP-8 standards, and REST API best practices for compliance-ready solutions.</li>
             </ul>
-            <div class="menu_icon">
-                <i class="fa fa-bars"></i>
+            <div class="exp-tags">
+              <span>Python</span><span>FastAPI</span><span>Presidio NLP</span><span>PDF/DOCX</span><span>REST API</span><span>PII Redaction</span>
             </div>
+          </div>
         </div>
+
+        <div class="timeline-item reveal" style="--delay:0.2s">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Sep 2021 — Jun 2025</div>
+          <div class="exp-card glass-card">
+            <div class="exp-top">
+              <div>
+                <div class="exp-role">B.Tech — Information Technology</div>
+                <div class="exp-focus">CGPA: 8.69</div>
+              </div>
+              <div class="exp-company-badge edu">
+                <span class="company-icon">🎓</span>
+                <span>VIT · Vellore</span>
+              </div>
+            </div>
+            <div class="exp-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Vellore, Tamil Nadu
+            </div>
+            <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">
+              Vellore Institute of Technology — one of India's premier technical universities. Specialized in Information Technology with a strong focus on AI/ML, full-stack development, and data science throughout the four-year programme.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-</header>
- 
-    <!-- Home Page -->
-    <div class="FirstElement" id="home">
-        <div class="profile-photo">
-            <img src="files/IMG_0662.png" alt="profile picture">
-        </div>
-        <div class="profile-text">
-            <h5>Hello I'm </h5><br>
-            <h1>Divyam</h1><br>
-            <p>Welcome to my portfolio website! I’m Divyam Kashyap, 
-                I am a versatile professional skilled in data analysis and software development, combining analytical and technical expertise to deliver impactful results. My commitment to problem-solving and continuous learning helps bridge business goals with technical execution, ensuring high-quality, innovative outcomes.</p>
-            
-            <div class="profile-btn-group">
-                <a href="files/Divyam_Kashyap_Resume.pdf" class="btn active">Download CV</a>
-                <a href="mailto:divyam.kashyap2812@gmail.com" class="btn">Contact</a>
-            </div>
+  </section>
 
-            <div class="social">
-                <a href="mailto:divyam.kashyap2812@gmail.com"><i class="fa fa-envelope"></i></a>
-                <a href="https://github.com/Dk-2812"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/divyam-kashyap-/"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <section class="about-area" id="about">
-        <div class="container">
-            <div class="about">
-                
-                <div class="about-content">
-                    <h4>About Me</h4>
-                    <ul>
-                        <li>I am currently pursuing a B.Tech in Information Technology, specializing in DBMS, Python, MERN stack, and Hadoop.</li>
-                        <li>I possess strong leadership and event management skills, developed through active participation in student organizations.</li>
-                        <li>I am committed to continuous learning and adaptability, eager to explore new technologies and contribute to dynamic projects.</li>
-                    </ul>
-                </div>
-                
-                <div class="about-skills">
-                    <ul>
-                        <li>Name: Divyam Kashyap</li>
-                        <li>Age: 23</li>     
-                        <li>From: Bihar, India</li>
-                        <li>Email: divyam.kashyap2812@gmail.com</li>
-                        <li>Company: Firstsource Solutions (FSL)</li>
-                        <li>Experience: 7 months</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education & Internship -->
-    <section class="education-content" id="education">
-        <div class="container">
-            <div class="row">
-                <div class="education">
-                    <h3 class="title">Education</h3>
-                    <div class="timeline-box">
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="circle-dot"></div>
-                                <h3 class="timeline-title">B.Tech IT - 8.69 CGPA</h3>
-                                <h4 class="timeline-title">Vellore Institute of Technology, Vellore</h4>
-                                <h4 class="timeline-title"><i class="fa fa-calendar"></i> 2021-2025</h4>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="circle-dot"></div>
-                                <h3 class="timeline-title">AISSCE/12th - 73.6%</h3>
-                                <h4 class="timeline-title">Delhi Public School International, Muzaffarpur</h4>
-                                <h4 class="timeline-title"><i class="fa fa-calendar"></i> 2020</h4>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="circle-dot"></div>
-                                <h3 class="timeline-title">AISSE/10th - 86.3%</h3>
-                                <h4 class="timeline-title">St. Xavier's Jr./Sr School, Muzaffarpur</h4>
-                                <h4 class="timeline-title"><i class="fa fa-calendar"></i> 2018</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="project-content" id="projects">
-        <div class="container">
-            <div class="project-title">
-                <h4>My Projects</h4>
-                <p>Check out my work, where each project merges creative thinking with technical expertise.</p>
-            </div>
-            <div class="projects">
-                <div class="project">
-                    <i class="fa fa-coffee"></i>
-                    <h4>DineEasy</h4>
-                    <p>An online restaurant reservation web app built using the MERN stack, featuring responsive design and secure user management.</p>
-                </div>
-                <div class="project">
-                    <i class="fa-solid fa-sheet-plastic"></i>
-                    <h4>ProCV Path</h4>
-                    <p>A user-friendly platform designed for crafting personalized resumes, featuring an intuitive step-by-step process suitable for all experience levels.</p>
-                </div>
-                <div class="project">
-                    <i class="fa fa-gamepad"></i>
-                    <h4>Space-Shooter Game</h4>
-                    <p>A classic space-shooter game developed in Python, featuring intuitive controls, diverse enemy types, and dynamic gameplay.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-------------------------- Certificates Section -------------------------->
-<section class="certificate-content" id="certifications">
+  <!-- PROJECTS -->
+  <section class="section projects-section" id="projects">
     <div class="container">
-        <div class="section-title">
-            <h2>Certificates</h2>
-            <p>Professional certifications validating my expertise</p>
-        </div>
-        
-        <div class="certificates">
-            <!-- Certificate 1 -->
-            <div class="certificate-item">
-                <div class="certificate-item-content">
-                    <i class="fa fa-certificate icon"></i>
-                    <div class="certificate-info">
-                        <h3>SQL for Data Science</h3>
-                        <p>Validated proficiency in SQL, with a focus on data science applications.</p>
-                    </div>
-                </div>
-                <div class="external-link">
-                    <a href="https://drive.google.com/file/d/1F3NsgrOyP8P1bg2DBAxIyIGKQwbG4wsr/view?usp=sharing"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #FFD43B;"></i></a>
-                </div>
-            </div>
-            
-            <!-- Certificate 2 -->
-            <div class="certificate-item">
-                <div class="certificate-item-content">
-                    <i class="fa fa-certificate icon"></i>
-                    <div class="certificate-info">
-                        <h3>Data Science and Hadoop</h3>
-                        <p>Demonstrated skills in handling big data using Hadoop for data science.</p>
-                    </div>
-                </div>
-                <div class="external-link">
-                    <a href="https://drive.google.com/file/d/1aLWbR97yHRGmH46Kj5u_LgyZ5FZ5g7Mw/view?usp=sharing"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #FFD43B;"></i></a>
-                </div>
-            </div>
-            
-            <!-- Certificate 3 -->
-            <div class="certificate-item">
-                <div class="certificate-item-content">
-                    <i class="fa fa-certificate icon"></i>
-                    <div class="certificate-info">
-                        <h3>MERN Stack Web Developer</h3>
-                        <p>Certified in full-stack development with MongoDB, Express.js, React, and Node.js.</p>
-                    </div>
-                </div>
-                <div class="external-link">
-                    <a href="https://drive.google.com/file/d/1EEkzniH0HhnKQfkGJSwvks1C4R1HJ5L2/view?usp=sharing"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #FFD43B;"></i></a>
-                </div>
-            </div>
+      <div class="section-header">
+        <div class="section-tag">02 · Projects</div>
+        <h2 class="section-title">Things I've<br><em>Built</em></h2>
+      </div>
 
-            <!-- Certificate 4 -->
-            <div class="certificate-item">
-                <div class="certificate-item-content">
-                    <i class="fa fa-certificate icon"></i>
-                    <div class="certificate-info">
-                        <h3>AWS Cloud Practitioner</h3>
-                        <p>Validated understanding of core AWS services and cloud principles.</p>
-                    </div>
-                </div>
-                <div class="external-link">
-                    <a href="https://drive.google.com/file/d/1jgi7kENBge4q1UGXQFoodh8u7JTSWCRb/view?usp=sharing"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #FFD43B;"></i></a>
-                </div>
+      <div class="projects-grid">
+
+        <div class="project-card featured-project glass-card reveal">
+          <div class="project-number">01</div>
+          <div class="project-top">
+            <div class="project-type-badge">Full-Stack · Web App</div>
+            <div class="project-links-icons">
+              <a href="#" title="Live">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
+          </div>
+          <h3 class="project-name">DineEasy</h3>
+          <p class="project-desc">Full-stack restaurant reservation system enabling seamless browsing, booking, and reservation management. Features JWT-based authentication with optimized performance.</p>
+          <div class="project-highlights">
+            <div class="highlight-item">
+              <span class="highlight-val">30%</span>
+              <span class="highlight-label">Faster DB queries</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-val">25%</span>
+              <span class="highlight-label">Faster page loads</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <span>ReactJS</span><span>MongoDB</span><span>ExpressJS</span><span>NodeJS</span><span>JWT</span>
+          </div>
         </div>
+
+        <div class="project-card glass-card reveal" style="--delay:0.1s">
+          <div class="project-number">02</div>
+          <div class="project-top">
+            <div class="project-type-badge alt">Frontend · Tool</div>
+            <div class="project-links-icons">
+              <a href="#" title="Live">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">ProCV Path</h3>
+          <p class="project-desc">Interactive resume builder with real-time preview, results-driven content rendering, and client-side PDF generation. Increased user completion rate significantly.</p>
+          <div class="project-highlights">
+            <div class="highlight-item">
+              <span class="highlight-val">40%</span>
+              <span class="highlight-label">Higher completion</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PDF.js</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal" style="--delay:0.2s">
+          <div class="project-number">03</div>
+          <div class="project-top">
+            <div class="project-type-badge alt2">Portfolio · Web</div>
+            <div class="project-links-icons">
+              <a href="#" title="Live">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">Personal Portfolio</h3>
+          <p class="project-desc">Responsive personal portfolio showcasing 10+ projects, research, and certifications. Smooth animations, optimized structure, and accessibility-focused UI.</p>
+          <div class="project-highlights">
+            <div class="highlight-item">
+              <span class="highlight-val">10+</span>
+              <span class="highlight-label">Projects, Certifications & Research</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Animation</span>
+          </div>
+        </div>
+
+      </div>
     </div>
-</section>
+  </section>
 
+  <!-- RESEARCH -->
+  <section class="section research-section" id="research">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">03 · Research</div>
+        <h2 class="section-title">AI/ML<br><em>Research</em></h2>
+      </div>
 
-    <!-- Contact Me -->
-    <section class="contact-content" id="contact">
-        <div class="container">
-            <div class="contact-title">
-                <h4>Contact Me</h4>
-                <p>Get In Touch</p>
+      <div class="research-layout">
+        <div class="research-card glass-card reveal">
+          <div class="research-header">
+            <div class="research-badge">Medical AI · CNN</div>
+            <div class="research-date">Dec 2024</div>
+          </div>
+          <div class="research-acc-block">
+            <div class="acc-ring">
+              <svg viewBox="0 0 120 120" class="acc-svg">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--accent)" stroke-width="8"
+                  stroke-dasharray="314" stroke-dashoffset="53" stroke-linecap="round"
+                  transform="rotate(-90 60 60)" class="acc-circle"/>
+              </svg>
+              <div class="acc-val">83%</div>
             </div>
-            <div class="contact">
-                <form name="submitToGoogleSheet">
-                    <input type="text" name="NAME" placeholder="Name" required>
-                    <input type="email" name="EMAIL" placeholder="Email" required>
-                    <input type="text" name="SUBJECT" placeholder="Subject">
-                    <textarea name="MESSAGE" placeholder="Message"></textarea>
-                    <input type="submit" value="Send Message" class="submit">
-                </form>
-                <span id="msg"></span>
+            <div class="acc-info">
+              <h3 class="research-title">PneuPredict Insight</h3>
+              <p class="research-subtitle">Pneumonia Detection from Chest X-Rays</p>
             </div>
+          </div>
+          <p class="research-desc">CNN-based medical image classification trained on 10,000+ labeled images. Integrated DenseNet121 with focal loss to address class imbalance. Deployed via Flask and Streamlit for real-time inference.</p>
+          <div class="research-stats">
+            <div class="r-stat"><span class="r-stat-val">10K+</span><span class="r-stat-label">Training images</span></div>
+            <div class="r-stat"><span class="r-stat-val">+12%</span><span class="r-stat-label">F1-score gain</span></div>
+          </div>
+          <div class="tech-stack">
+            <span>CNN</span><span>DenseNet121</span><span>Focal Loss</span><span>Flask</span><span>Streamlit</span>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <small class="message">Thanks for visiting!!</small>
-        <small class="copyright">&copy; Copyright 2022. All rights reserved.</small>
-    </footer>
+        <div class="research-card glass-card reveal" style="--delay:0.2s">
+          <div class="research-header">
+            <div class="research-badge alt">Biomedical · ML</div>
+            <div class="research-date">Sep 2024</div>
+          </div>
+          <div class="research-acc-block">
+            <div class="acc-ring">
+              <svg viewBox="0 0 120 120" class="acc-svg">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--accent3)" stroke-width="8"
+                  stroke-dasharray="314" stroke-dashoffset="25" stroke-linecap="round"
+                  transform="rotate(-90 60 60)" class="acc-circle"/>
+              </svg>
+              <div class="acc-val" style="color:var(--accent3)">92%</div>
+            </div>
+            <div class="acc-info">
+              <h3 class="research-title">Parkinson's Detection</h3>
+              <p class="research-subtitle">Biomedical Voice Dataset Analysis</p>
+            </div>
+          </div>
+          <p class="research-desc">Supervised ML pipeline using voice datasets. Feature engineering reduced dimensionality by 35%. XGBoost after hyperparameter tuning achieved 92% accuracy with 20% improvement in model sensitivity.</p>
+          <div class="research-stats">
+            <div class="r-stat"><span class="r-stat-val">35%</span><span class="r-stat-label">Dim reduction</span></div>
+            <div class="r-stat"><span class="r-stat-val">+20%</span><span class="r-stat-label">Sensitivity</span></div>
+          </div>
+          <div class="tech-stack">
+            <span>XGBoost</span><span>SVM</span><span>Random Forest</span><span>Scikit-learn</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- SKILLS -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">04 · Skills</div>
+        <h2 class="section-title">Tech<br><em>Arsenal</em></h2>
+      </div>
+
+      <div class="skills-wrapper">
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">💻</span>
+            <span class="skill-cat-name">Languages</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-top"><span>Python</span><span>95%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-top"><span>JavaScript</span><span>85%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-top"><span>C++</span><span>75%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-top"><span>SQL</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal" style="--delay:0.1s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">⚙️</span>
+            <span class="skill-cat-name">Backend & APIs</span>
+          </div>
+          <div class="skill-pills-wrap">
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">RESTful APIs</span>
+            <span class="skill-pill">NodeJS</span>
+            <span class="skill-pill">ExpressJS</span>
+            <span class="skill-pill">File Handling</span>
+            <span class="skill-pill">Multipart Upload</span>
+            <span class="skill-pill">API Integration</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal" style="--delay:0.15s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🌐</span>
+            <span class="skill-cat-name">Frontend</span>
+          </div>
+          <div class="skill-pills-wrap">
+            <span class="skill-pill">ReactJS</span>
+            <span class="skill-pill">HTML5</span>
+            <span class="skill-pill">Tailwind CSS</span>
+            <span class="skill-pill">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal" style="--delay:0.2s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🤖</span>
+            <span class="skill-cat-name">AI / GenAI</span>
+          </div>
+          <div class="skill-pills-wrap">
+            <span class="skill-pill hot">Generative AI</span>
+            <span class="skill-pill hot">RAG</span>
+            <span class="skill-pill hot">Prompt Engineering</span>
+            <span class="skill-pill">LLM API</span>
+            <span class="skill-pill">Agentic AI</span>
+            <span class="skill-pill">Presidio NLP</span>
+            <span class="skill-pill">Workflow Automation</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal" style="--delay:0.25s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">📊</span>
+            <span class="skill-cat-name">Data Analytics</span>
+          </div>
+          <div class="skill-pills-wrap">
+            <span class="skill-pill">EDA</span>
+            <span class="skill-pill">Power BI</span>
+            <span class="skill-pill">Excel Pivots</span>
+            <span class="skill-pill">Healthcare Analytics</span>
+            <span class="skill-pill">Denial Analysis</span>
+            <span class="skill-pill">Aging Analysis</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal" style="--delay:0.3s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🛠️</span>
+            <span class="skill-cat-name">Tools</span>
+          </div>
+          <div class="skill-pills-wrap">
+            <span class="skill-pill">VS Code</span>
+            <span class="skill-pill">Jupyter</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">Postman</span>
+            <span class="skill-pill">IntelliJ IDEA</span>
+            <span class="skill-pill">AWS CLF-02</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section certs-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">05 · Credentials</div>
+        <h2 class="section-title">Certifi-<br><em>cations</em></h2>
+      </div>
+      <div class="certs-row">
+        <a href="https://drive.google.com/file/d/1tcamGNULMGylsAwD8S7_wl3UxaY1XyYA/view?usp=drive_link" target="_blank" class="cert-link">
+        <div class="cert-card glass-card reveal">
+          <div class="cert-icon">🗃️</div>
+          <div class="cert-body">
+            <div class="cert-org">FIRSTSOURCE</div>
+            <div class="cert-name">Data Science & Analytics</div>
+          </div>
+          <div class="cert-year">2022</div>
+        </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1jgi7kENBge4q1UGXQFoodh8u7JTSWCRb/view?usp=drive_link" target="_blank" class="cert-link">
+        <div class="cert-card glass-card reveal" style="--delay:0.1s">
+          <div class="cert-icon">☁️</div>
+          <div class="cert-body">
+            <div class="cert-org">Amazon Web Services</div>
+            <div class="cert-name">AWS Certified Cloud Practitioner (CLF-02)</div>
+          </div>
+          <div class="cert-year">2023</div>
+        </div>
+        </a>
+        <a href="https://drive.google.com/file/d/13FbvnAxrmZNMobTjjnsqXzRElJ4zR0ef/view?usp=drive_link" target="_blank" class="cert-link">
+        <div class="cert-card glass-card reveal" style="--delay:0.1s">
+          <div class="cert-icon">📈</div>
+          <div class="cert-body">
+            <div class="cert-org">Langchain Academy</div>
+            <div class="cert-name">Introduction to LangChain - Python</div>
+          </div>
+          <div class="cert-year">2026</div>
+        </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1q8ELQg_iAWqJqC3tJv1pJNzyksr7WJYA/view?usp=sharing" target="_blank" class="cert-link">
+        <div class="cert-card glass-card reveal" style="--delay:0.1s">
+          <div class="cert-icon">📈</div>
+          <div class="cert-body">
+            <div class="cert-org">Langchain Academy</div>
+            <div class="cert-name">Introduction to LangGraph - Python</div>
+          </div>
+          <div class="cert-year">2026</div>
+        </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1wWMu53QoqpzcfmVgINMU6V0_kbFevaJL/view?usp=drive_link" target="_blank" class="cert-link">
+        <div class="cert-card glass-card reveal" style="--delay:0.2s">
+          <div class="cert-icon">🤖</div>
+          <div class="cert-body">
+            <div class="cert-org">Firstsource</div>
+            <div class="cert-name">Exploring Agentic AI: Autonomous Intelligence in Action</div>
+          </div>
+          <div class="cert-year">2026</div>
+        </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1EEkzniH0HhnKQfkGJSwvks1C4R1HJ5L2/view?usp=drive_link" target="_blank" class="cert-link">
+        <div class="cert-card glass-card reveal" style="--delay:0.3s">
+          <div class="cert-icon">⚛️</div>
+          <div class="cert-body">
+            <div class="cert-org">Ethnus</div>
+            <div class="cert-name">Certified MERN Stack Web Developer</div>
+          </div>
+          <div class="cert-year">2023</div>
+        </div>
+        </a>
+      </div>
+      <div class="cert-view-more">
+        <a href="https://drive.google.com/drive/folders/1u9F-4DgV8ZK2e33pprvtGwaDpBAAER1B?usp=sharing" target="_blank" class="btn-ghost">
+        View More Certifications →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="contact-left reveal">
+          <div class="section-tag">06 · Contact</div>
+          <h2 class="contact-big">
+            Let's<br>
+            <em>Build</em><br>
+            Together
+          </h2>
+          <p class="contact-sub">
+            Open to exciting opportunities, collaborations, and interesting problems. Reach out — I'll get back to you quickly.
+          </p>
+          <div class="social-row">
+            <a href="https://www.linkedin.com/in/divyam-kashyap-/" target="_blank" class="social-btn" title="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/Dk-2812" target="_blank" class="social-btn" title="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right reveal" style="--delay:0.2s">
+          <div class="contact-cards">
+            <a href="tel:+916202814712" class="contact-card glass-card">
+              <div class="cc-icon">📱</div>
+              <div class="cc-body">
+                <div class="cc-label">Phone</div>
+                <div class="cc-value">+91 6202814712</div>
+              </div>
+              <div class="cc-arrow">→</div>
+            </a>
+            <a href="mailto:divyam.kashyap2812@gmail.com" class="contact-card glass-card">
+              <div class="cc-icon">✉️</div>
+              <div class="cc-body">
+                <div class="cc-label">Email</div>
+                <div class="cc-value">divyam.kashyap2812@gmail.com</div>
+              </div>
+              <div class="cc-arrow">→</div>
+            </a>
+            <a href="https://www.linkedin.com/in/divyam-kashyap-/" target="_blank" class="contact-card glass-card">
+              <div class="cc-icon">💼</div>
+              <div class="cc-body">
+                <div class="cc-label">LinkedIn</div>
+                <div class="cc-value">Divyam Kashyap</div>
+              </div>
+              <div class="cc-arrow">→</div>
+            </a>
+            <a href="https://github.com/Dk-2812" target="_blank" class="contact-card glass-card">
+              <div class="cc-icon">🐙</div>
+              <div class="cc-body">
+                <div class="cc-label">GitHub</div>
+                <div class="cc-value">Dk-2812</div>
+              </div>
+              <div class="cc-arrow">→</div>
+            </a>
+            <div class="contact-card glass-card no-hover">
+              <div class="cc-icon">📍</div>
+              <div class="cc-body">
+                <div class="cc-label">Location</div>
+                <div class="cc-value">Muzaffarpur, Bihar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-line"></div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>DK<span class="logo-bracket">]</span>
+      </div>
+      <div class="footer-copy">© 2022 Divyam Kashyap · Crafted with precision</div>
+      <div class="footer-stack">Made with HTML · CSS · JS</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
